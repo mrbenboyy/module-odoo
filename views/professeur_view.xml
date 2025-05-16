@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="professeur_form_view" model="ir.ui.view">
+            <field name="name">professeur.form</field>
+            <field name="model">professeur</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="prenom"/>
+                            <field name="email"/>
+                            <field name="specialite"/>
+                            <field name="cours_ids" widget="one2many"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="professeur_tree_view" model="ir.ui.view">
+            <field name="name">professeur.tree</field>
+            <field name="model">professeur</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="prenom"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action et Menu -->
+        <record id="professeur_action" model="ir.actions.act_window">
+            <field name="name">Professeurs</field>
+            <field name="res_model">professeur</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_professeur" name="Professeurs" parent="menu_gestion_etudiants" action="professeur_action"
+                  sequence="30"/>
+    </data>
+</odoo>

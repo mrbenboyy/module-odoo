@@ -9,6 +9,7 @@
     'data': [
         'views/etudiant_view.xml',
         'views/cours_view.xml',
+        'views/professeur_view.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
