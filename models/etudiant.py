@@ -26,3 +26,8 @@ class Etudiant(models.Model):
         string='Sexe',
         default='homme'  # Valeur par défaut
     )
+
+    cours_ids = fields.Many2many(
+        comodel_name='cours',
+        string='Cours suivis'
+    )

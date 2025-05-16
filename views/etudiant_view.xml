@@ -15,15 +15,18 @@
                             <field name="sexe"/> <!-- Nouveau champ -->
                         </group>
                         <group>
-
                             <field name="date_naissance"/>
                             <field name="email"/>
                             <field name="telephone"/>
+                        </group>
+                        <group>
+                            <field name="cours_ids" widget="many2many_tags"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
+
         <!-- Liste des étudiants -->
         <record id="etudiant_tree_view" model="ir.ui.view">
             <field name="name">etudiant.tree.view</field>
@@ -38,15 +41,16 @@
                 </tree>
             </field>
         </record>
+
         <!-- Action pour ouvrir la liste des étudiants -->
         <record id="etudiant_action" model="ir.actions.act_window">
             <field name="name">Étudiants</field>
             <field name="res_model">gestion.etudiant</field>
             <field name="view_mode">tree,form</field>
         </record>
+
         <!-- Menu pour accéder à la liste des étudiants -->
-        <menuitem id="menu_gestion_etudiants" name="Gestion des étudiants"
-                  sequence="10"/>
+        <menuitem id="menu_gestion_etudiants" name="Gestion des étudiants" sequence="10"/>
         <menuitem id="menu_etudiant" name="Étudiants" parent="menu_gestion_etudiants"
                   action="etudiant_action" sequence="10"/>
     </data>
