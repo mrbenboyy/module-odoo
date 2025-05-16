@@ -10,8 +10,16 @@
                     <sheet>
                         <group>
                             <field name="name"/>
+                            <field name="code"/>
                             <field name="description"/>
+                            <field name="credits"/>
+                            <field name="niveau"/>
+                            <field name="professeur_id"/>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
+                            <field name="duree_totale" readonly="1"/>
                             <field name="etudiant_ids" widget="many2many_tags"/>
+                            <field name="actif"/>
                         </group>
                     </sheet>
                 </form>
@@ -25,7 +33,14 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="description"/>
+                    <field name="code"/>
+                    <field name="credits"/>
+                    <field name="niveau"/>
+                    <field name="professeur_id"/>
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
+                    <field name="duree_totale"/>
+                    <field name="actif"/>
                 </tree>
             </field>
         </record>
