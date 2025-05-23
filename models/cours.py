@@ -31,6 +31,13 @@ class Cours(models.Model):
             else:
                 record.duree_totale = 0
 
+    @api.constrains('etudiant_ids')
+    def _check_etudiants_limit(self):
+        for record in self:
+            if len(record.etudiant_ids) > 3:
+                raise ValidationError("Un cours ne peut pas avoir plus de 3 étudiants inscrits!")
+
     _sql_constraints = [
-        ("unique_code", "UNIQUE(code)", "Le code du cours doit être unique !")
+        ("unique_code", "UNIQUE(code)", "Le code du cours doit être unique!"),
+        ("check_credits_positive", "CHECK(credits > 0)", "Le nombre de crédits doit être positif."),
     ]
